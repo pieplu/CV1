@@ -1,127 +1,69 @@
 <!doctype html>
 <html lang="fr">
 
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Alexis Piéplu</title>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Alexis Piéplu</title>
 
+		<style type="text/css">
+			@import url(http://fonts.googleapis.com/css?family=Ubuntu:500);
 
-<style type="text/css">
+			body {
+				background: url(bkg1.svg) center 0 no-repeat fixed;
+				-webkit-background-size: cover; /* pour Chrome et Safari */
+				-moz-background-size: cover; /* pour Firefox */
+				-o-background-size: cover; /* pour Opera */
+				background-size: cover;
+			}
 
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:500);
+			p.bonjour {
+				font-family: Ubuntu, Verdana, Geneva, sans-serif;
+				font-size: 5em;
+				color: #333;
+				text-align: center;
+				margin: 25% auto;
+				width: 300px;
+			}
 
-/* Mise en place des diffÃ©rentes parties / slides */
-#slide1, #slide2, #slide3 {
-	height: 1000px;
-	padding-top:100px;
-}
+			#jesuis {
+				font-family: Ubuntu, Verdana, Geneva, sans-serif;
+				font-size: 5em;
+				color: #333;
+				text-align: left;
+				width: 900px;
+			}
 
-#slide1 {
-	background:url(bkg1.svg) center 0 no-repeat fixed;
+			#designer {
+				font-family: Ubuntu, Verdana, Geneva, sans-serif;
+				font-size: 5em;
+				color: blue;
+				text-align: right;
+			}
 
-}
+		</style>
+	</head>
 
-#slide2 {
-	background: url(bkg2.svg) center 0 no-repeat;
+	<body>
 
-}
+		<div  id="slide1">
+			<p class="bonjour">
+				bonjour.
+			</p>
+		</div><!--#slide1-->
 
-#slide3 {
-	background: url(bkg1.svg) center 0 no-repeat;
-	
-}
+		<div id="slide2">
+			<p id="jesuis">
+				je suis
+			</p>
+		</div>
+		<!--#slide2-->
 
-#yop{
-	-webkit-background-size: cover; /* pour Chrome et Safari */
-  	-moz-background-size: cover; /* pour Firefox */
-  	-o-background-size: cover; /* pour Opera */
-	background-size: cover;	
-}
+		<div id="slide3">
+			<p id="designer">
+				&ensp; Designer
+			</p>
+		</div>
+		<!--#slide3-->
 
-
-/* Gestion du contenu */
-.slide_inside {
-	width: 980px;
-	margin: 0 auto;
-}
-
-#slide1  .slide_inside {
-	text-align:center;
-}
-
-#slide2 .slide_inside p {
-
-
-}
-
-#slide3 .slide_inside {
-
-}
-
-
-p.bonjour {
-	font-family: Ubuntu, Verdana, Geneva, sans-serif;
-	font-size: 5em;
-	color: #333;
-	text-align:center;
-	margin:25% auto;
-  	width:300px;
-
-}
-
-#jesuis {
-	font-family: Ubuntu, Verdana, Geneva, sans-serif;
-	font-size: 5em;
-	color: #333;
-	text-align:left;
-
-	width: 900px;
-	
-}
-
-#designer{
-	font-family: Ubuntu, Verdana, Geneva, sans-serif;
-	font-size: 5em;
-	color: blue;
-	text-align:right;
-}
-
-</style>
-</head>
-
-
-<body>
-
-<div  id="slide1">
-  <div class="slide_inside">
-    <p class="bonjour">bonjour.</p>
-  </div><!--slide_inside-->
-</div><!--#slide1-->
-	
-	<div id="slide2">
-		<div class="slide_inside">
-				<p id="jesuis">je suis </p>
-		</div> <!--slide_inside-->	     	    
-	</div> <!--#slide2-->
-	
-	
-	<div id="slide3">
-		<div class="slide_inside">
-				<p id="designer">&ensp; Designer</p>
-		</div> <!--slide_inside-->	 
-	</div> <!--#slide3-->
-
-
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.parallax-1.1.js"></script>
-
-<script type="text/javascript">	
-    $(document).ready(function(){		
-        $('#slide1').parallax("center", 0, 0.1, true);
-        $('#slide2').parallax("center", 900, 0.1, true);
-        $('#slide3').parallax("center", 2900, 0.1, true);
-    })
-</script>
-</body>
+	</body>
 </html>
