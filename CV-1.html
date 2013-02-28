@@ -5,6 +5,11 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Alexis Piéplu</title>
 
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script> 
+ 			window.resizeTo (1280,800) ; 
+ 		</script>
+
 		<style type="text/css">
 			@import url(http://fonts.googleapis.com/css?family=Ubuntu:500);
 
@@ -16,71 +21,128 @@
 				background-size: cover;
 			}
 
-			p.bonjour {
+			.bonjour {
 				font-family: Ubuntu, Verdana, Geneva, sans-serif;
 				font-size: 5em;
 				color: #333;
 				text-align: center;
-				margin: 25% auto;
+				margin-top: 25%;
+				margin-left:auto;
+				margin-right:auto;
 				width: 300px;
 			}
 
-			#jesuis {
+
+			#jeSuis {
 				font-family: Ubuntu, Verdana, Geneva, sans-serif;
 				font-size: 5em;
 				color: #333;
-				margin: 25% auto;
 				width: 500px;
 			}
+			
+			#jeSuis.avant {
+				position: relative;
+				top:300px;
+				
+				margin: 0% 0% 0% 18%;
+			}
+			
+			#jeSuis.floatable {
+				position: fixed;
+				top:300px;
+				margin: 0% 0% 0% 18%;
+				
+			}
+
 
 			#designer {
 				font-family: Ubuntu, Verdana, Geneva, sans-serif;
 				font-size: 5em;
-				color: blue;
-				margin: 25% auto;
-				width: 800px;
+				color: #408AD2;
+				position: absolute;
+				top:1000px;
+				margin: 0% 0% 0% 45%;
+				
 			}
-			
-				#prog {
+
+			#prog {
 				font-family: Ubuntu, Verdana, Geneva, sans-serif;
 				font-size: 5em;
-				color: blue;
-				margin: 25% auto;
-				width: 1000px;
+				color: #9C6AD6;
+				position: absolute;
+				top:2000px;
+				margin: 0% 0% 0% 45%;
+				
 			}
 			
+			#alexis {
+				font-family: Ubuntu, Verdana, Geneva, sans-serif;
+				font-size: 5em;
+				color: #04396C;
+				position: absolute;
+				top:3000px;
+				margin: 0% 0% 0% 45%;
+				
+			}
 			
+			#fin{
+				position: absolute;
+				top:4000px;
+				height: 2000px;
+				background-color: blue;
+			}
 
 		</style>
 	</head>
 
 	<body>
 
-		<div  id="slide1">
+		
 			<p class="bonjour">
 				bonjour.
 			</p>
-		</div><!--#slide1-->
 
-		<div id="slide2">
-			<p id="jesuis">
-				je suis &emsp; &emsp; &emsp; &emsp;
+
+
+			<p id="jeSuis">
+				je suis :
 			</p>
-		</div>
-		<!--#slide2-->
 
-		<div id="slide3">
+
 			<p id="designer">
-				&emsp; &emsp; &emsp; &emsp; &ensp; Designer
+				Designer
 			</p>
-		</div>
-		
-		<div id="slide4">
+
+
 			<p id="prog">
-				&emsp; &emsp; &emsp; &emsp; &ensp; Programmeur
+				Programmeur
 			</p>
-		</div>
+			
+			<p id="alexis">
+				Alexis Piéplu
+			</p>
+
 		
+		<div id="fin">
+			&nbsp;
+		</div>
+
+		<script type="text/javascript">
+			// listen for scroll
+			var positionElementInPage = $('#jeSuis').offset().top;
+			$(window).scroll(function() {
+				if ($(window).scrollTop() >= positionElementInPage) {
+					// fixed
+					$('#jeSuis').addClass("floatable");
+					$('#jeSuis').removeClass("avant");
+				} else {
+					// relative
+					$('#jeSuis').removeClass("floatable");
+					$('#jeSuis').addClass("avant");
+					
+				}
+			});
+		</script>
 
 	</body>
 </html>
