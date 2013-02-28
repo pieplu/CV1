@@ -6,9 +6,9 @@
 		<title>Alexis Piéplu</title>
 
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script> 
- 			window.resizeTo (1280,800) ; 
- 		</script>
+		<script>
+			window.resizeTo(1280, 800);
+		</script>
 
 		<style type="text/css">
 			@import url(http://fonts.googleapis.com/css?family=Ubuntu:500);
@@ -27,11 +27,10 @@
 				color: #333;
 				text-align: center;
 				margin-top: 25%;
-				margin-left:auto;
-				margin-right:auto;
+				margin-left: auto;
+				margin-right: auto;
 				width: 300px;
 			}
-
 
 			#jeSuis {
 				font-family: Ubuntu, Verdana, Geneva, sans-serif;
@@ -39,55 +38,83 @@
 				color: #333;
 				width: 500px;
 			}
-			
+
 			#jeSuis.avant {
 				position: relative;
-				top:300px;
-				
-				margin: 0% 0% 0% 18%;
-			}
-			
-			#jeSuis.floatable {
-				position: fixed;
-				top:300px;
-				margin: 0% 0% 0% 18%;
-				
+				top: 300px;
+				margin: 0px 0px 0px 227px;
 			}
 
+			#jeSuis.floatable {
+				position: fixed;
+				top: 300px;
+				margin: 0px 0px 0px 227px;
+			}
+
+			#jeSuis.apres {
+				position: absolute;
+				top: 3100px;
+				margin: 0px 0px 0px 227px;
+			}
 
 			#designer {
 				font-family: Ubuntu, Verdana, Geneva, sans-serif;
 				font-size: 5em;
-				color: #408AD2;
+				color: #FFDA73;
+				background-color: #333333;
+				padding: 10px;
 				position: absolute;
-				top:1000px;
-				margin: 0% 0% 0% 45%;
-				
+				top: 1200px;
+				margin: 0px 0px 0px 560px;
 			}
 
 			#prog {
 				font-family: Ubuntu, Verdana, Geneva, sans-serif;
 				font-size: 5em;
-				color: #9C6AD6;
+				color: #FFDA73;
+				background-color: #333333;
+				padding: 10px;
 				position: absolute;
-				top:2000px;
-				margin: 0% 0% 0% 45%;
-				
+				top: 2000px;
+				margin: 0px 0px 0px 560px;
 			}
-			
+
 			#alexis {
 				font-family: Ubuntu, Verdana, Geneva, sans-serif;
 				font-size: 5em;
-				color: #04396C;
+				color: #6A94D4;
+				background-color: #333333;
+				padding: 10px;
+			}
+			#alexis.avant {
 				position: absolute;
-				top:3000px;
-				margin: 0% 0% 0% 45%;
-				
+				top: 3000px;
+				margin: 0px 0px 0px 560px;
+			}
+
+			#alexis.floatable {
+				position: fixed;
+				top: 190px;
+				margin: 0px 0px 0px 560px;
 			}
 			
-			#fin{
+			.cv {
+				position:absolute;
+				top: 3600px;
+				margin: 0px 0px 0px 560px;
+			}
+			
+			h1 {
+				font-family: Ubuntu, Verdana, Geneva, sans-serif;
+				font-size: 2em;
+				color: #FFDA73;
+				background-color: #333333;
+				
+			}
+
+			#fin {
 				position: absolute;
-				top:4000px;
+				top: 4000px;
 				height: 2000px;
 				background-color: blue;
 			}
@@ -97,32 +124,42 @@
 
 	<body>
 
+		<p class="bonjour">
+			bonjour.
+		</p>
+
+		<p id="jeSuis">
+			je suis :
+		</p>
+
+		<p id="designer">
+			Designer
+		</p>
+
+		<p id="prog">
+			Programmeur
+		</p>
+
+		<p id="alexis">
+			Alexis Piéplu
+		</p>
 		
-			<p class="bonjour">
-				bonjour.
-			</p>
-
-
-
-			<p id="jeSuis">
-				je suis :
-			</p>
-
-
-			<p id="designer">
-				Designer
-			</p>
-
-
-			<p id="prog">
-				Programmeur
-			</p>
+		<div class="cv">
+			<div class="section">
+				<h1>
+					Formations
+				</h1>
+			</div>
 			
-			<p id="alexis">
-				Alexis Piéplu
-			</p>
+			<div class="section">
+				<h1>
+					Expériences
+				</h1>
+				
+			</div>
+			
+		</div>
 
-		
 		<div id="fin">
 			&nbsp;
 		</div>
@@ -131,17 +168,28 @@
 			// listen for scroll
 			var positionElementInPage = $('#jeSuis').offset().top;
 			$(window).scroll(function() {
+				$('#alexis').removeClass("floatable");
+				$('#alexis').addClass("avant");
+				$('#jeSuis').removeClass("apres");
 				if ($(window).scrollTop() >= positionElementInPage) {
 					// fixed
 					$('#jeSuis').addClass("floatable");
 					$('#jeSuis').removeClass("avant");
+					
 				} else {
 					// relative
 					$('#jeSuis').removeClass("floatable");
 					$('#jeSuis').addClass("avant");
-					
+
+				}
+				if ($(window).scrollTop() >= 2800) {
+					$('#jeSuis').removeClass("floatable");
+					$('#jeSuis').addClass("apres");
+					$('#alexis').removeClass("avant");
+					$('#alexis').addClass("floatable");
 				}
 			});
+
 		</script>
 
 	</body>
