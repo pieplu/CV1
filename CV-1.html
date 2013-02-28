@@ -11,7 +11,7 @@
 		</script>
 
 		<style type="text/css">
-			@import url(http://fonts.googleapis.com/css?family=Ubuntu:500);
+			@import url(http://fonts.googleapis.com/css?family=Ubuntu:500,300,400);
 
 			body {
 				background: url(bkg1.svg) center 0 no-repeat fixed;
@@ -23,6 +23,7 @@
 
 			.bonjour {
 				font-family: Ubuntu, Verdana, Geneva, sans-serif;
+				font-weight: 500;
 				font-size: 5em;
 				color: #333;
 				text-align: center;
@@ -34,6 +35,7 @@
 
 			#jeSuis {
 				font-family: Ubuntu, Verdana, Geneva, sans-serif;
+				font-weight: 500;
 				font-size: 5em;
 				color: #333;
 				width: 500px;
@@ -53,12 +55,13 @@
 
 			#jeSuis.apres {
 				position: absolute;
-				top: 3100px;
+				top: 3000px;
 				margin: 0px 0px 0px 227px;
 			}
 
 			#designer {
 				font-family: Ubuntu, Verdana, Geneva, sans-serif;
+				font-weight: 500;
 				font-size: 5em;
 				color: #FFDA73;
 				background-color: #333333;
@@ -70,6 +73,7 @@
 
 			#prog {
 				font-family: Ubuntu, Verdana, Geneva, sans-serif;
+				font-weight: 500;
 				font-size: 5em;
 				color: #FFDA73;
 				background-color: #333333;
@@ -81,10 +85,12 @@
 
 			#alexis {
 				font-family: Ubuntu, Verdana, Geneva, sans-serif;
+				font-weight: 500;
 				font-size: 5em;
 				color: #6A94D4;
 				background-color: #333333;
 				padding: 10px;
+				z-index: 1;
 			}
 			#alexis.avant {
 				position: absolute;
@@ -97,19 +103,75 @@
 				top: 190px;
 				margin: 0px 0px 0px 560px;
 			}
-			
+
+			#table {
+				width: 400px;
+			}
+
+			#table.avant {
+				position: absolute;
+				top: 3600px;
+				margin: 0px 0px 0px 60px;
+			}
+			#table.floatable {
+				position: fixed;
+				top: 190px;
+				margin: 0px 0px 0px 60px;
+			}
+
 			.cv {
-				position:absolute;
+				position: absolute;
 				top: 3600px;
 				margin: 0px 0px 0px 560px;
 			}
-			
+
 			h1 {
 				font-family: Ubuntu, Verdana, Geneva, sans-serif;
+				font-weight: 400;
 				font-size: 2em;
 				color: #FFDA73;
 				background-color: #333333;
-				
+				margin: 0px 0px 5px 0px;
+				padding: 5px;
+			}
+
+			a {
+				text-decoration: none;
+				color: #EEE;
+			}
+
+			a:hover {
+				text-decoration: none;
+				color: #333;
+			}
+
+			.barre {
+				background-color: #333333;
+				width: 1px;
+				padding: 0px;
+			}
+
+			.cell {
+				font-family: Ubuntu, Verdana, Geneva, sans-serif;
+				font-weight: 300;
+				font-size: 1em;
+				text-align: right;
+				vertical-align: middle;
+				color: #333;
+				width: 319px;
+				padding: 10px;
+				height: 60px;
+			}
+
+			.annee {
+				font-family: Ubuntu, Verdana, Geneva, sans-serif;
+				font-weight: 500;
+				font-size: 1.5em;
+				vertical-align: middle;
+				color: #333;
+				width: 80px;
+				padding: 10px;
+				height: 60px;
 			}
 
 			#fin {
@@ -123,59 +185,94 @@
 	</head>
 
 	<body>
+		<div class="boite">
+			<p class="bonjour">
+				bonjour.
+			</p>
 
-		<p class="bonjour">
-			bonjour.
-		</p>
+			<p id="jeSuis">
+				je suis :
+			</p>
 
-		<p id="jeSuis">
-			je suis :
-		</p>
+			<p id="designer">
+				Designer
+			</p>
 
-		<p id="designer">
-			Designer
-		</p>
+			<p id="prog">
+				Programmeur
+			</p>
 
-		<p id="prog">
-			Programmeur
-		</p>
+			<p id="alexis">
+				Alexis Piéplu
+			</p>
 
-		<p id="alexis">
-			Alexis Piéplu
-		</p>
-		
-		<div class="cv">
-			<div class="section">
-				<h1>
-					Formations
-				</h1>
+			<div id="table">
+				<table>
+					<tr>
+						<td class="cell">Certificat en Informatique et Développement de Logiciels
+						<br />
+						<a href="http://www.sciences.uqam.ca/programmes-detudes/126-certificat-en-informatique-et-en-developpement-de-logiciels-.html"> <b>UQ&#192;M</b> </a> (Montréal) </td>
+
+						<td class="barre" rowspan="5">&nbsp;</td>
+						<td class="annee">2013</td>
+					</tr>
+					<tr>
+						<td class="cell">&nbsp;</td>
+						<td class="annee">&nbsp;</td>
+					</tr>
+					<tr>
+						<td class="cell"> Concepteur en Communication Visuelle (BAC +4)
+						<br />
+						<a href="http://www.ecole-intuit-lab.com/fr/ecole"><b>&#201;cole intuit.lab</b></a> (Paris)</td>
+
+						<td class="annee">2012</td>
+					</tr>
+					<tr>
+						<td class="cell">&nbsp;</td>
+						<td class="annee">&nbsp;</td>
+					</tr>
+					<tr>
+						<td class="cell">Designer Graphique Stagiaire (4 mois)
+						<br />
+						<a href="http://bleuoutremer.qc.ca/"><b>Bleuoutremer</b></a> (Québec)</td>
+						<td class="annee">2011</td>
+					</tr>
+
+				</table>
+
 			</div>
-			
-			<div class="section">
-				<h1>
-					Expériences
-				</h1>
-				
+
+			<div class="cv">
+				<div class="section">
+					<h1>Compétences</h1>
+				</div>
+
+				<div class="section">
+					<h1>Expériences</h1>
+
+				</div>
+
 			</div>
-			
-		</div>
 
-		<div id="fin">
-			&nbsp;
+			<div id="fin">
+				&nbsp;
+			</div>
 		</div>
-
 		<script type="text/javascript">
 			// listen for scroll
 			var positionElementInPage = $('#jeSuis').offset().top;
 			$(window).scroll(function() {
 				$('#alexis').removeClass("floatable");
 				$('#alexis').addClass("avant");
+				$('#table').removeClass("floatable");
+				$('#table').addClass("avant");
 				$('#jeSuis').removeClass("apres");
+
 				if ($(window).scrollTop() >= positionElementInPage) {
 					// fixed
 					$('#jeSuis').addClass("floatable");
 					$('#jeSuis').removeClass("avant");
-					
+
 				} else {
 					// relative
 					$('#jeSuis').removeClass("floatable");
@@ -183,10 +280,18 @@
 
 				}
 				if ($(window).scrollTop() >= 2800) {
-					$('#jeSuis').removeClass("floatable");
-					$('#jeSuis').addClass("apres");
+					
 					$('#alexis').removeClass("avant");
 					$('#alexis').addClass("floatable");
+				}
+				if ($(window).scrollTop() >= 2700) {
+					$('#jeSuis').removeClass("floatable");
+					$('#jeSuis').addClass("apres");
+					
+				}
+				if ($(window).scrollTop() >= 3410) {
+					$('#table').removeClass("avant");
+					$('#table').addClass("floatable");
 				}
 			});
 
